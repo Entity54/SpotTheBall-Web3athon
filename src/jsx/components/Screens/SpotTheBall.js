@@ -9,7 +9,6 @@ import golf from "../../../images/golf.jpg";
 import crossCursor from "../../../images/cross_100185.png";
 import blueCross from "../../../images/blueCross.png";
 import redCross from "../../../images/redCross.png";
-// import phalalogo from "../../../images/phalalogo.png";
 import stbtitle from "../../../images/stbtitle.png";
 
 //TODO load image from AWS-S3 4everland
@@ -307,7 +306,7 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 		console.log(`***** >>>>>>> x: ${x} y: ${y} zIndex : ${zInd}`)
 		return (
 
-				<div class="rect" id="rect" style={{alignItems:"center", display:"flex", justifyContent:"center", margin: "0px", cursor:"crosshair", zIndex:`${1+zInd}`, position:"absolute",  left:`${10+x}px`, top:`${200+y}px`   }}> 
+				<div class="rect" id="rect" style={{alignItems:"center", display:"flex", justifyContent:"center", margin: "0px", cursor:"crosshair", zIndex:`${1+zInd}`, position:"absolute",  left:`${40+x}px`, top:`${180+y}px`   }}> 
 					<img alt="images" width={25} height={25} src={colr==="blue"?blueCross: (colr==="red"?redCross:crossCursor)} 
 					/> 
 				</div>
@@ -383,8 +382,8 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 		<Fragment>
 			<div className="col-xl-12 col-lg-12">
 				<div className="card bg-gradient-2" style={{backgroundColor:""}}>
-					<div className="card-header mt-4">
-						<div className="col-xl-7 col-lg-6"style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
+					<div className="card-header">
+						<div className="col-xl-6 col-lg-6"style={{alignItems:"center", display:"flex", justifyContent:"center", marginLeft:"40px"}}>
 							<img alt="images" width={1100} src={stbtitle} ></img>
 						</div>
 
@@ -392,7 +391,7 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 						<div className="col-xl-3 col-lg-6"style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
 								<div className="row mb-4">
 
-										<div className="col-md-4 text-white fs-18"style={{backgroundColor:""}}>
+										<div className="col-md-4 text-white text-center fs-18"style={{backgroundColor:""}}>
 											<label>Start Time</label>
 											<input
 												type="textarea"
@@ -401,7 +400,7 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 												value={gameState?phala_game_stats.startTime:""}
 											/>
 										</div>
-										<div className="col-md-4 text-white fs-18"style={{backgroundColor:""}}>
+										<div className="col-md-4 text-white text-center fs-18"style={{backgroundColor:""}}>
 											<label>End Time</label>
 											<input
 												type="textarea"
@@ -410,7 +409,7 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 												value={gameState?phala_game_stats.endTime:""}
 											/>
 										</div>
-										<div className="col-md-4 text-white fs-18"style={{backgroundColor:""}}>
+										<div className="col-md-4 text-white text-center fs-18"style={{backgroundColor:""}}>
 											<label>Remaining</label>
 											<input
 												type="textarea"
@@ -426,38 +425,6 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 
 
 
-						<div className="col-xl-2 col-lg-6"style={{backgroundColor:""}}
-									onClick = { () => phala_get_account_balance()}
-
-						>
-							<div className="">
-								{/* <p className="mb-0 fs-18"style={{display:"flex", justifyContent:"right", marginRight:"60px"}} >axlUSDC</p> */}
-								<p className="mb-0 fs-18"style={{display:"flex", justifyContent:"right", marginRight:"60px"}} >{balanceCurrncy}</p>
-								{/* <p className="mb-0 fs-18"style={{display:"flex", justifyContent:"right", marginRight:"60px"}} >INTR</p>
-								<p className="mb-0 fs-18"style={{display:"flex", justifyContent:"right", marginRight:"60px"}} >ASTR</p> */}
-
-							</div>
-								<div  className="coin-holding" style={{height:"70px", marginBottom:"15px", backgroundColor:"#2a2e47", color:"white",border:"2px solid grey"}}>
-									<div className="col-xl-6 col-xxl-3"style={{backgroundColor:""}}>
-										<div className="mb-2">
-											<div className="align-items-center">
-												<div className="ms-3 pt-2">
-													<p className="mb-0 op-6 fs-24" >Balance</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className="col-xl-6 col-xxl-3"  style={{backgroundColor:""}}>
-										<div className="mb-2" style={{backgroundColor:""}}> 
-											<div className="align-items-center"  style={{backgroundColor:""}}>
-												<div className="ms-0 pt-2" style={{backgroundColor:"", width:"100%"}}>
-													<input type="text" disabled readOnly value = {phala_account_balance} placeholder="" className="form-control fs-16" style={{color:"white",  textAlign:"center",  }} />
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-						</div>
 					</div>
 					<div className="card-body" style={{backgroundColor:""}}>
 						<div className="row">
@@ -468,7 +435,7 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 										onClick = { (e) => getPosition(e)}
 									/> 
 								</div> */}
-								<div class="rect" id="rect" style={{alignItems:"center", display:"flex", justifyContent:"center", margin: "10px", cursor:"crosshair", zIndex:"1", position:"absolute",  left:"10px", top:"200px"  }} onMouseEnter={() => mathsHover()} onMouseLeave={() => mathsUnhover()}> 
+								<div class="rect" id="rect" style={{alignItems:"center", display:"flex", justifyContent:"center", margin: "10px", cursor:"crosshair", zIndex:"1", position:"absolute",  left:"40px", top:"180px"  }} onMouseEnter={() => mathsHover()} onMouseLeave={() => mathsUnhover()}> 
 									<img alt="images" width={1100} height={715} src={golf} border= '5px solid rgba(42,46,71,0.3)' style={{zIndex:"1" }}
 										onClick = { (e) => getPosition(e)}
 									/> 
@@ -484,18 +451,18 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 
 								{/* <div className="row"> */}
 								<div className="row" style={{position:"absolute", zIndex:"1", marginTop:"730px"}}>
-									<div className="col-xl-1 col-lg-6"style={{backgroundColor:""}}></div>
-									<div className="col-xl-10 col-lg-6"style={{backgroundColor:""}}>
+									{/* <div className="col-xl-1 col-lg-6"style={{backgroundColor:""}}></div> */}
+									<div className="col-xl-11 col-lg-6"style={{backgroundColor:""}}>
 										<div className="col-xl-12 col-lg-6"style={{backgroundColor:""}}>
-											<div className="row">
+											<div className="row" style={{marginLeft:"20px"}}>
 												<div className="col-xl-4 col-lg-6"style={{backgroundColor:""}}
 																onClick = { () => phala_get_total_pot()}
 												>
-													<div  className="coin-holding" style={{height:"70px", marginTop:"10px", border:"2px solid grey", backgroundColor:"#2a2e47"}}>
+													<div  className="coin-holding" style={{height:"70px", marginTop:"10px",paddingRight:"10px", border:"2px solid grey", backgroundColor:"#2a2e47"}}>
 														<div className="col-xl-6 col-xxl-3"style={{backgroundColor:""}}>
 															<div className="mb-2">
 																<div className="align-items-center">
-																	<div className="ms-3 pt-2">
+																	<div className="ms-1 pt-2">
 																		<p className="mb-0 op-6 fs-24 text-white" >Pot Size</p>
 																	</div>
 																</div>
@@ -504,7 +471,7 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 														<div className="col-xl-6 col-xxl-3"  style={{backgroundColor:""}}>
 															<div className="" style={{backgroundColor:""}}> 
 																<div className="align-items-center"  style={{backgroundColor:""}}>
-																	<div className="" style={{backgroundColor:"",width:"100%"}}>
+																	<div className="" style={{backgroundColor:"",paddingLeft:"10px", width:"100%"}}>
 																		<input type="text" disabled readOnly value = {potSize} placeholder="" className="form-control fs-16" style={{color:"white", textAlign:"center", backgroundColor:"" }} />
 																	</div>
 																</div>
@@ -515,11 +482,11 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 												<div className="col-xl-4 col-lg-6"style={{backgroundColor:""}}
 																onClick = { () => phala_get_total_fees()}
 												>
-													<div  className="coin-holding" style={{height:"70px", marginTop:"10px", border:"2px solid grey", backgroundColor:"#2a2e47"}}>
+													<div  className="coin-holding" style={{height:"70px", marginTop:"10px", paddingRight:"10px", border:"2px solid grey", backgroundColor:"#2a2e47"}}>
 														<div className="col-xl-6 col-xxl-3"style={{backgroundColor:""}}>
 															<div className="mb-2">
 																<div className="align-items-center">
-																	<div className="ms-3 pt-2">
+																	<div className="ms-1 pt-2">
 																		<p className="mb-0 op-6 fs-24 text-white" >Moonbeam</p>
 																	</div>
 																</div>
@@ -528,7 +495,7 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 														<div className="col-xl-6 col-xxl-3"  style={{backgroundColor:""}}>
 															<div className="" style={{backgroundColor:""}}> 
 																<div className="align-items-center"  style={{backgroundColor:""}}>
-																	<div className="" style={{backgroundColor:"", width:"100%"}}>
+																	<div className="" style={{backgroundColor:"", paddingLeft:"10px", width:"100%"}}>
 																		<input type="text" disabled readOnly value = {fees} placeholder="" className="form-control fs-16" style={{color:"white",  textAlign:"center",  }} />
 																	</div>
 																</div>
@@ -540,11 +507,11 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 																onClick = { () => phala_get_total_net_pot()}
 												
 												>
-													<div  className="coin-holding" style={{height:"70px", marginTop:"10px", border:"2px solid grey", backgroundColor:"#2a2e47"}}>
+													<div  className="coin-holding" style={{height:"70px", marginTop:"10px", paddingRight:"10px", border:"2px solid grey", backgroundColor:"#2a2e47"}}>
 														<div className="col-xl-6 col-xxl-3"style={{backgroundColor:""}}>
 															<div className="mb-2">
 																<div className="align-items-center">
-																	<div className="ms-3 pt-2">
+																	<div className="ms-1 pt-2">
 																		<p className="mb-0 op-6 fs-24 text-white" >Binance</p>
 																	</div>
 																</div>
@@ -553,7 +520,7 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 														<div className="col-xl-6 col-xxl-3"  style={{backgroundColor:""}}>
 															<div className="" style={{backgroundColor:""}}> 
 																<div className="align-items-center"  style={{backgroundColor:""}}>
-																	<div className="" style={{backgroundColor:"", width:"100%"}}>
+																	<div className="" style={{backgroundColor:"", paddingLeft:"10px", width:"100%"}}>
 																		<input type="text" disabled readOnly value = {payout} placeholder="" className="form-control fs-16" style={{color:"white",  textAlign:"center",  }} />
 																	</div>
 																</div>
@@ -586,6 +553,40 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 											Play
 										</button>
 									</div> */}
+									<div className="col-xl-3 col-lg-5"style={{backgroundColor:""}}></div>
+									<div className="col-xl-5 col-lg-5"style={{backgroundColor:""}}
+												onClick = { () => phala_get_account_balance()}
+
+									>
+										<div className="">
+											{/* <p className="mb-0 fs-18"style={{display:"flex", justifyContent:"right", marginRight:"60px"}} >axlUSDC</p> */}
+											<p className="mb-0 mt-2 fs-18"style={{display:"flex", justifyContent:"right", marginRight:"60px"}} >{balanceCurrncy}</p>
+											{/* <p className="mb-0 fs-18"style={{display:"flex", justifyContent:"right", marginRight:"60px"}} >INTR</p>
+											<p className="mb-0 fs-18"style={{display:"flex", justifyContent:"right", marginRight:"60px"}} >ASTR</p> */}
+
+										</div>
+										<div  className="coin-holding pt-3" style={{height:"60px", marginBottom:"", backgroundColor:"#2a2e47", color:"white",border:"2px solid grey"}}>
+											<div className="col-xl-6 col-xxl-3"style={{backgroundColor:""}}>
+												<div className="mb-2">
+													<div className="align-items-center">
+														<div className="ms-3 pt-2">
+															<p className="mb-0 op-6 fs-24" >Balance</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div className="col-xl-6 col-xxl-3"  style={{backgroundColor:""}}>
+												<div className="mb-2" style={{backgroundColor:""}}> 
+													<div className="align-items-center"  style={{backgroundColor:""}}>
+														<div className="ms-0 pt-2" style={{backgroundColor:"", width:"100%"}}>
+															<input type="text" disabled readOnly value = {phala_account_balance} placeholder="" className="form-control fs-16" style={{color:"white",  textAlign:"center",  }} />
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
 								</div>
 
 								<div className="row"style={{marginTop:"80px"}}>
@@ -679,7 +680,7 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 									</div>
 
 									<div className="form-group col-md-3 d-flex align-items-center p-0"style={{backgroundColor:""}}>
-										<button type="submit" className="btn btn-warning text-center mx-0"style={{marginTop:"32px", width:"50%"}}  
+										<button type="submit" className="btn btn-warning text-center mx-4"style={{marginTop:"32px", width:"100%"}}  
 									           onClick = { () => clearTickets()}
 										>
 											Clear Tickets
@@ -730,27 +731,17 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 						</div>
 					</div>
 				</div>
-
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-
-
-				<div className="card bg-gradient-2" style={{backgroundColor:"", height: "100px"}}>
-					<div className="card-header mt-4">
-							<div className="col-xl-2 col-lg-6"style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
-							</div>
-
-							<div className="col-xl-8 col-lg-6"style={{ fontSize:"18px", color: "yellow", alignItems:"center", display:"flex", justifyContent:"center"}}>
+				<div className="row">
+					<div className="col-xl-3"style={{backgroundColor:""}}></div>
+					<div className="col-xl-6"style={{ fontSize:"22px", color: "yellow"}}>
+						<div className="card bg-gradient-2" style={{backgroundColor:"", width:"100%"}}>
+							<div className="card-body text-center py-2">
 								{engineMessage}
 							</div>
-							<div className="col-xl-2 col-lg-6"style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
-							</div>
+						</div>
 					</div>
+					<div className="col-xl-3"></div>
 				</div>
-
 			</div>
 		</Fragment>
 	)

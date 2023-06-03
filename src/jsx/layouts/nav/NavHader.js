@@ -1,7 +1,7 @@
 import React, { Fragment, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../../context/ThemeContext";
-import phalalogo from "../../../images/phalalogo.png";
+import cube1 from "../../../images/cube1.png";
 
 const NavHader = ({blockHeader}) => {
   const [toggle, setToggle] = useState(false);
@@ -17,17 +17,17 @@ const NavHader = ({blockHeader}) => {
           <Fragment>
               <div className="row">
                   <div className="col-xl-4 col-xxl-4">
-                        <img alt="images" width={50} src={phalalogo} />  
+                        <img alt="images" width={50} src={cube1} />  
                   </div>
                   <div className="col-xl-8 col-xxl-8">
-                            <h6 style={{fontSize:"16px"}}>Phala</h6> 
+                            <h6 style={{fontSize:"16px"}}>Phala Block</h6> 
                             <h6 style={{fontSize:"16px"}}>#{blockHeader.number? blockHeader.number : "Not Connected"}</h6>
                   </div>
               </div>
           </Fragment>
         ) : (
           <Fragment>
-							<img alt="images" width={50} src={phalalogo} />
+							<img alt="images" width={50} src={cube1} />
           </Fragment>
         )}
       </Link>
