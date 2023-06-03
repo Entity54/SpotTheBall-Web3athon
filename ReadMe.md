@@ -6,8 +6,6 @@
 
 <br>
 
-# TODO UPDATE AT THE END OF THIS DOC THE FRESH SC AND PHAT ADDRESSES FOR MOONBASE,BINANCE,PHALA
-
 ### Description: github link in here
 
 <br/>
@@ -304,11 +302,36 @@ Finally the get_hall_of_fame query allows us to retreive the vec with all hall o
 
 ---
 
-phala_games_STB 0.1.0 <br>
-CONTRACT ID 0x12b2e9253e689a6714f3405a96cdf70be918340896c8106b8b9fd38f44cf9001 <br>
-CODE HASH 0xdcc6397c593a2eff133833be72e3b4ba53d9200d6fecdaa5f8c9a4d088bdbf73 <br>
-LANGUAGE ink! 4.1.0 <br>
-COMPILER rustc 1.68.2 <br>
-DEVELOPER 464inykovjdRPhMhW2zbJ47iA8qYSmPWqKLkaEgH2xc6SQ4c <br>
-CLUSTERID 0x0000000000000000000000000000000000000000000000000000000000000001 <br>
-STAKES 0.01 <br>
+## Addresses of deployed contracts
+
+### Moonbase Alpha Testnet
+
+axelar_game_manager_moonbase_address = "0x264D7022404bD7AE3ca3CE817347DC1cDD036368";
+
+game_players_moonbase_address = "0xe34dc382EAf965fDbBEFC267c59ed399fBCD1Dd6";
+
+game_deposits_moonbase_address = "0x20a9C9dAFef8D9BDaC2de110FD13443fB5679913";
+<br>
+
+### Binance Testnet
+
+axelar_game_manager_binanceTestNet_address = "0xe295348aC14AdC064273d71A21f6520b2B634884";
+game_players_binanceTestNet_address = "0x78ae32d083606fdf12630A9f8A20bF0FEDcbcFdD";
+game_deposits_binanceTestNet_address = "0xA7ceeB7D789f68d197A3181156B69372c8eE6a5F";
+<br>
+
+### Phala Closed-Beta Testnet
+
+phat_games_STB_contractId = "0xe1302a8db9ead738c2de1f483a6c01d4b4e3595ca271aa291cc7ecdbbd2b42ab"
+
+CODE HASH 0x6f6dc3a36a2dc00c2fa56f9b6f8f6814e7d92403e1909d98058909fdb4b57215
+
+LANGUAGE ink! 4.2.0
+
+COMPILER rustc 1.68.2
+
+DEVELOPER 464inykovjdRPhMhW2zbJ47iA8qYSmPWqKLkaEgH2xc6SQ4c
+
+CLUSTERID 0x0000000000000000000000000000000000000000000000000000000000000001
+
+STAKES 0.01
