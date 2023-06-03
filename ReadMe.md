@@ -6,6 +6,8 @@
 
 <br>
 
+# TODO UPDATE AT THE END OF THIS DOC THE FRESH SC AND PHAT ADDRESSES FOR MOONBASE,BINANCE,PHALA
+
 ### Description: github link in here
 
 <br/>
