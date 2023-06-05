@@ -22,6 +22,9 @@ import {
 	get_hall_of_fame,
 	start_new_game,
 	get_ordered_tickets,
+
+	transfer_fromMoonbeam,
+	
 } from "../../../Setup";
  
 
@@ -165,6 +168,19 @@ const Tickets = ({ api,  blockHeader }) => {
 									>
 										Start
 									</button>
+
+
+
+									{/* <button type="submit" className="btn btn-primary text-center mx-4"style={{backgroundColor:`${gameState?"grey":"green"}`, marginTop:"30px", width:"100%"}}  disabled={gameState}
+									    onClick = { () => transfer_fromMoonbeam()}
+									>
+										XCM
+									</button> */}
+
+
+
+
+
 								</div>
 
 								<div className="col-md-3 text-white fs-18"style={{backgroundColor:""}}>

@@ -898,7 +898,7 @@ const getAccountFormatsforAccountI32 = (accountId32="") => {
 
 
 //#region transfer_fromMoonbeam
-const getMultiLocationMoonbeam = async (destinationAccount="5HWdttFeYE89GQDGNRYspsJouxZ56xwm6bzKxSPtbDjwpQbb",  destParachainId="2032") => {
+const getMultiLocationMoonbeam = (destinationAccount="5HWdttFeYE89GQDGNRYspsJouxZ56xwm6bzKxSPtbDjwpQbb",  destParachainId="2032") => {
 		// multilocation 
 		const hexvalue = getAccountId_to_Hex(destinationAccount)
 		const nakedhexvalue = hexvalue.substring(2);
@@ -912,7 +912,7 @@ const getMultiLocationMoonbeam = async (destinationAccount="5HWdttFeYE89GQDGNRYs
 
 
 //#region transfer_fromMoonbeam
-const transfer_fromMoonbeam = async (symbol="ASTR", _amount=1, destinationAccount="5HWdttFeYE89GQDGNRYspsJouxZ56xwm6bzKxSPtbDjwpQbb",  destParachainId="2032") => {
+const transfer_fromMoonbeam = async (symbol="INTR", _amount=1, destinationAccount="5HWdttFeYE89GQDGNRYspsJouxZ56xwm6bzKxSPtbDjwpQbb",  destParachainId="2032") => {
 	return new Promise (async (resolve, reject) => {
         let precompile, amount;
 		if (symbol.toLowerCase()=="intr")
@@ -935,7 +935,7 @@ const transfer_fromMoonbeam = async (symbol="ASTR", _amount=1, destinationAccoun
 	    const multilocation = [`0x00${destParachainHex}`,`0x01${nakedhexvalue}00`];
 	    
 		const destination = [1,multilocation];
-	    // console.log(`Transfer_multiasset amount: ${amount} nakedhexvalue: ${nakedhexvalue} Multilocation: `,multilocation,` should be 0x0160c4d758184d11761943be32f71ae877974e0fa4cad523e1c3ba6c5ed340545c00 for qVA946xk9bGQ8A4m4EP3q1A1LJwvyi3QBzTRsAr68VvqeEo   destination: `,destination);
+	    console.log(`Transfer_multiasset amount: ${amount} nakedhexvalue: ${nakedhexvalue} Multilocation: `,multilocation,` should be 0x0160c4d758184d11761943be32f71ae877974e0fa4cad523e1c3ba6c5ed340545c00 for qVA946xk9bGQ8A4m4EP3q1A1LJwvyi3QBzTRsAr68VvqeEo   destination: `,destination);
   
 		// fees
 		const weight = 4000000000;
@@ -1232,120 +1232,120 @@ const transfer_ASTR_FromParachainToParachain = async (originChain="Astar", parac
 
 
 //#region getAvailableBalance POLKADOT
-const getAvailableBalancePOLKADOT = async (account, token=null, metamaskAccount, network=null) => {
-	if (!token || !account || !metamaskAccount) { console.log("No token or account or metamaskAccount has been provided for getAvailableBalance"); return null }
+// const getAvailableBalancePOLKADOT = async (account, token=null, metamaskAccount, network=null) => {
+// 	if (!token || !account || !metamaskAccount) { console.log("No token or account or metamaskAccount has been provided for getAvailableBalance"); return null }
 
-	if ( !PolkadotApi || !AcalaApi || !MoonbeamApi )
-	{ 
-	  console.log("Some of the APIs are not set up. Please Refresh Dapp");
-	  //TODO APIManagement 
-	  return null; 
-	}
+// 	if ( !PolkadotApi || !AcalaApi || !MoonbeamApi )
+// 	{ 
+// 	  console.log("Some of the APIs are not set up. Please Refresh Dapp");
+// 	  //TODO APIManagement 
+// 	  return null; 
+// 	}
 
-	const moonbeamAddress = metamaskAccount;
-	const accounts = getAccountFormatsforAccountI32(account);
-	const {substrate_Address, polkadot_Address, acala_Address, moonbeam_Address} = accounts;
-	// console.log(`POLKADOT ACCOUNT FORMATS substrate_Address:${substrate_Address} polkadot_Address:${polkadot_Address} acala_Address:${acala_Address} moonbeamAddress:${moonbeamAddress}`);
+// 	const moonbeamAddress = metamaskAccount;
+// 	const accounts = getAccountFormatsforAccountI32(account);
+// 	const {substrate_Address, polkadot_Address, acala_Address, moonbeam_Address} = accounts;
+// 	// console.log(`POLKADOT ACCOUNT FORMATS substrate_Address:${substrate_Address} polkadot_Address:${polkadot_Address} acala_Address:${acala_Address} moonbeamAddress:${moonbeamAddress}`);
 
 	
-	if (token.toLowerCase()==="dot")
-	{
-	  const timestamp = await PolkadotApi.query.timestamp.now();   
+// 	if (token.toLowerCase()==="dot")
+// 	{
+// 	  const timestamp = await PolkadotApi.query.timestamp.now();   
 
-	  //Polkado
-	  const { nonce, data: balancePolkadot } = await PolkadotApi.query.system.account(polkadot_Address);   // Retrieve the account balance & nonce via the system module
-	  let PolkadotBalance = null;
-	  if (balancePolkadot) 
-	  PolkadotBalance = Number( ethers.utils.formatUnits( (balancePolkadot.free).toString(), 10) ).toFixed(4)
-	  // console.log(`DOT Polkadot Now => ${timestamp}: For account:${polkadot_Address} Polkadot ${token} balance Free: ${PolkadotBalance} `);
+// 	  //Polkado
+// 	  const { nonce, data: balancePolkadot } = await PolkadotApi.query.system.account(polkadot_Address);   // Retrieve the account balance & nonce via the system module
+// 	  let PolkadotBalance = null;
+// 	  if (balancePolkadot) 
+// 	  PolkadotBalance = Number( ethers.utils.formatUnits( (balancePolkadot.free).toString(), 10) ).toFixed(4)
+// 	  // console.log(`DOT Polkadot Now => ${timestamp}: For account:${polkadot_Address} Polkadot ${token} balance Free: ${PolkadotBalance} `);
 
-	  //Acala
-	  const {free: free1 , reserved: reserved1, frozen: frozen1} = await AcalaApi.query.tokens.accounts(acala_Address, {Token: token.toLowerCase() }); 
-	  const AcalaBalance = Number(ethers.utils.formatUnits( free1.toString(), 10)).toFixed(4);
-	  // console.log(`Acala For account:${acala_Address}  Token: ${token} => ${timestamp}: balance free: ${AcalaBalance} reserved: ${reserved1} frozen: ${frozen1}`);
+// 	  //Acala
+// 	  const {free: free1 , reserved: reserved1, frozen: frozen1} = await AcalaApi.query.tokens.accounts(acala_Address, {Token: token.toLowerCase() }); 
+// 	  const AcalaBalance = Number(ethers.utils.formatUnits( free1.toString(), 10)).toFixed(4);
+// 	  // console.log(`Acala For account:${acala_Address}  Token: ${token} => ${timestamp}: balance free: ${AcalaBalance} reserved: ${reserved1} frozen: ${frozen1}`);
 
-	  //Moonbeam
-	  const balanceMoonbeam = await MoonbeamApi.query.assets.account("42259045809535163221576417993425387648", moonbeamAddress );  
-	  let MoonbeamBalance = null;
-	  if (balanceMoonbeam.toJSON()) 
-	  MoonbeamBalance = Number( ethers.utils.formatUnits( balanceMoonbeam.toJSON().balance, 10) ).toFixed(4);
-	  // console.log(`Moonbeam  For account:${moonbeamAddress} Token: ${token} => ${timestamp}: balance free: ${MoonbeamBalance} `);
+// 	  //Moonbeam
+// 	  const balanceMoonbeam = await MoonbeamApi.query.assets.account("42259045809535163221576417993425387648", moonbeamAddress );  
+// 	  let MoonbeamBalance = null;
+// 	  if (balanceMoonbeam.toJSON()) 
+// 	  MoonbeamBalance = Number( ethers.utils.formatUnits( balanceMoonbeam.toJSON().balance, 10) ).toFixed(4);
+// 	  // console.log(`Moonbeam  For account:${moonbeamAddress} Token: ${token} => ${timestamp}: balance free: ${MoonbeamBalance} `);
 
-	  const balances = { token, timestamp: new Date(timestamp).toISOString, Polkadot: PolkadotBalance,  Acala: AcalaBalance, Moonbeam: MoonbeamBalance };
-	  return {accounts, balances};
-	}
-	else  if (token.toLowerCase()==="aca") 
-	{
-	  const timestamp = await PolkadotApi.query.timestamp.now();   
+// 	  const balances = { token, timestamp: new Date(timestamp).toISOString, Polkadot: PolkadotBalance,  Acala: AcalaBalance, Moonbeam: MoonbeamBalance };
+// 	  return {accounts, balances};
+// 	}
+// 	else  if (token.toLowerCase()==="aca") 
+// 	{
+// 	  const timestamp = await PolkadotApi.query.timestamp.now();   
 
-	  //Acala
-	  const { nonce, data: balance } = await AcalaApi.query.system.account(acala_Address);   // Retrieve the account balance & nonce via the system module
-	  let AcalaBalance = null;
-	  if (balance) 
-	  AcalaBalance = Number( ethers.utils.formatUnits( (balance.free).toString(), 12) ).toFixed(4)
-	  // console.log(`Now => ${timestamp}: Acala  For account:${acala_Address}   ${token} balance Free: ${AcalaBalance} reserved: ${balance.reserved} frozen: ${balance.frozen} and nonce: ${nonce}`);
+// 	  //Acala
+// 	  const { nonce, data: balance } = await AcalaApi.query.system.account(acala_Address);   // Retrieve the account balance & nonce via the system module
+// 	  let AcalaBalance = null;
+// 	  if (balance) 
+// 	  AcalaBalance = Number( ethers.utils.formatUnits( (balance.free).toString(), 12) ).toFixed(4)
+// 	  // console.log(`Now => ${timestamp}: Acala  For account:${acala_Address}   ${token} balance Free: ${AcalaBalance} reserved: ${balance.reserved} frozen: ${balance.frozen} and nonce: ${nonce}`);
 	
-	  //Moonbeam
-	  // 224821240862170613278369189818311486111    110021739665376159354538090254163045594
-	  const balanceMoonbeam = await MoonbeamApi.query.assets.account("224821240862170613278369189818311486111", moonbeamAddress );  
-	  let MoonbeamBalance = null;
-	  if (balanceMoonbeam.toJSON()) 
-	  MoonbeamBalance = Number( ethers.utils.formatUnits( (balanceMoonbeam.toJSON()).balance, 12) ).toFixed(4);
-	  // console.log(`Moonbeam For account:${moonbeamAddress} Token: ${token} => ${timestamp}: balance free: ${MoonbeamBalance} `);
+// 	  //Moonbeam
+// 	  // 224821240862170613278369189818311486111    110021739665376159354538090254163045594
+// 	  const balanceMoonbeam = await MoonbeamApi.query.assets.account("224821240862170613278369189818311486111", moonbeamAddress );  
+// 	  let MoonbeamBalance = null;
+// 	  if (balanceMoonbeam.toJSON()) 
+// 	  MoonbeamBalance = Number( ethers.utils.formatUnits( (balanceMoonbeam.toJSON()).balance, 12) ).toFixed(4);
+// 	  // console.log(`Moonbeam For account:${moonbeamAddress} Token: ${token} => ${timestamp}: balance free: ${MoonbeamBalance} `);
 	  
-	  const balances = { token, timestamp: new Date(timestamp).toISOString, Polkadot: null,  Acala: AcalaBalance, Moonbeam: MoonbeamBalance };
-	  return {accounts, balances};
-	}
-	else  if (token.toLowerCase()==="glmr") 
-	{
-	  const timestamp = await PolkadotApi.query.timestamp.now();   
+// 	  const balances = { token, timestamp: new Date(timestamp).toISOString, Polkadot: null,  Acala: AcalaBalance, Moonbeam: MoonbeamBalance };
+// 	  return {accounts, balances};
+// 	}
+// 	else  if (token.toLowerCase()==="glmr") 
+// 	{
+// 	  const timestamp = await PolkadotApi.query.timestamp.now();   
 
-	  //Acala
-	  const {free: free1 , reserved: reserved1, frozen: frozen1} = await AcalaApi.query.tokens.accounts(acala_Address, {ForeignAsset: 0 }); 
-	  const AcalaBalance = Number(ethers.utils.formatUnits( free1.toString(), 18)).toFixed(4);
-	  // console.log(`Acala For account: ${acala_Address} Token: ${token} => ${timestamp}: balance free: ${AcalaBalance} reserved: ${reserved1} frozen: ${frozen1}`);
+// 	  //Acala
+// 	  const {free: free1 , reserved: reserved1, frozen: frozen1} = await AcalaApi.query.tokens.accounts(acala_Address, {ForeignAsset: 0 }); 
+// 	  const AcalaBalance = Number(ethers.utils.formatUnits( free1.toString(), 18)).toFixed(4);
+// 	  // console.log(`Acala For account: ${acala_Address} Token: ${token} => ${timestamp}: balance free: ${AcalaBalance} reserved: ${reserved1} frozen: ${frozen1}`);
 
-	  //Moonbeam
-	  const { nonce, data: balance } = await MoonbeamApi.query.system.account(moonbeamAddress);   // Retrieve the account balance & nonce via the system module
-	  // console.log(`Moonriver MOVR balance: `,balance.toJSON())
-	  let MoonbeamBalance = null;
-	  if (balance) 
-	  MoonbeamBalance = Number( ethers.utils.formatUnits( (balance.toJSON()).free, 18) ).toFixed(4);
-	  // console.log(`Moonbeam For account:${moonbeamAddress} Token: ${token} => ${timestamp}: balance free: ${MoonbeamBalance} `);
+// 	  //Moonbeam
+// 	  const { nonce, data: balance } = await MoonbeamApi.query.system.account(moonbeamAddress);   // Retrieve the account balance & nonce via the system module
+// 	  // console.log(`Moonriver MOVR balance: `,balance.toJSON())
+// 	  let MoonbeamBalance = null;
+// 	  if (balance) 
+// 	  MoonbeamBalance = Number( ethers.utils.formatUnits( (balance.toJSON()).free, 18) ).toFixed(4);
+// 	  // console.log(`Moonbeam For account:${moonbeamAddress} Token: ${token} => ${timestamp}: balance free: ${MoonbeamBalance} `);
 
-	  const balances = { token, timestamp: new Date(timestamp).toISOString, Polkadot: null,  Acala: AcalaBalance, Moonbeam: MoonbeamBalance };
-	  return {accounts, balances};
-	}
-	else  if (token.toLowerCase()==="ausd")  
-	{
+// 	  const balances = { token, timestamp: new Date(timestamp).toISOString, Polkadot: null,  Acala: AcalaBalance, Moonbeam: MoonbeamBalance };
+// 	  return {accounts, balances};
+// 	}
+// 	else  if (token.toLowerCase()==="ausd")  
+// 	{
 
-	  const timestamp = await PolkadotApi.query.timestamp.now();   
+// 	  const timestamp = await PolkadotApi.query.timestamp.now();   
 
-	  //Acala
-	  const {free: free1 , reserved: reserved1, frozen: frozen1} = await AcalaApi.query.tokens.accounts(acala_Address, {Token: "ausd" }); 
-	  const AcalaBalance = Number(ethers.utils.formatUnits( free1.toString(), 12)).toFixed(4);
-	  // console.log(`***** Acala For account: ${acala_Address} Token: ${token} => ${timestamp}: balance free: ${AcalaBalance} reserved: ${reserved1} frozen: ${frozen1}`);
+// 	  //Acala
+// 	  const {free: free1 , reserved: reserved1, frozen: frozen1} = await AcalaApi.query.tokens.accounts(acala_Address, {Token: "ausd" }); 
+// 	  const AcalaBalance = Number(ethers.utils.formatUnits( free1.toString(), 12)).toFixed(4);
+// 	  // console.log(`***** Acala For account: ${acala_Address} Token: ${token} => ${timestamp}: balance free: ${AcalaBalance} reserved: ${reserved1} frozen: ${frozen1}`);
 
-	  //Moonbeam
-	  const balanceMoonbeam = await MoonbeamApi.query.assets.account("110021739665376159354538090254163045594", moonbeamAddress );  
-	  let MoonbeamBalance = null;
-	  if (balanceMoonbeam.toJSON()) 
-	  MoonbeamBalance = Number( ethers.utils.formatUnits( balanceMoonbeam.toJSON().balance, 12) ).toFixed(4);
-	  // console.log(`Moonbeam For account:${moonbeamAddress} Token: ${token} => ${timestamp}: balance free: ${MoonbeamBalance} `);
+// 	  //Moonbeam
+// 	  const balanceMoonbeam = await MoonbeamApi.query.assets.account("110021739665376159354538090254163045594", moonbeamAddress );  
+// 	  let MoonbeamBalance = null;
+// 	  if (balanceMoonbeam.toJSON()) 
+// 	  MoonbeamBalance = Number( ethers.utils.formatUnits( balanceMoonbeam.toJSON().balance, 12) ).toFixed(4);
+// 	  // console.log(`Moonbeam For account:${moonbeamAddress} Token: ${token} => ${timestamp}: balance free: ${MoonbeamBalance} `);
 
-	  const balances = { token, timestamp: new Date(timestamp).toISOString, Polkadot: null,  Acala: AcalaBalance, Moonbeam: MoonbeamBalance };
-	  return {accounts, balances};
-	}
-	else  if (token.toLowerCase()==="astr") 
-	{
-	  console.log("Work In Progresss");
-	}
-	else  if (token.toLowerCase()==="para") 
-	{
-	  console.log("Work In Progresss");
-	}
+// 	  const balances = { token, timestamp: new Date(timestamp).toISOString, Polkadot: null,  Acala: AcalaBalance, Moonbeam: MoonbeamBalance };
+// 	  return {accounts, balances};
+// 	}
+// 	else  if (token.toLowerCase()==="astr") 
+// 	{
+// 	  console.log("Work In Progresss");
+// 	}
+// 	else  if (token.toLowerCase()==="para") 
+// 	{
+// 	  console.log("Work In Progresss");
+// 	}
 
-}
+// }
 //#endregion 
 
 
@@ -1357,7 +1357,29 @@ const getAccountId_to_Hex = (accountI32="") => {
 	// console.log(`getAccountIdtoHex Received accountI32: ${accountI32} publicKeyU8:${publicKeyU8} hexvalue: ${hexvalue}`);
 	return hexvalue;
   }
-  //#endregion
+
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(`hexvalue: ${getAccountId_to_Hex("5HWdttFeYE89GQDGNRYspsJouxZ56xwm6bzKxSPtbDjwpQbb")}`);
+  // hexvalue: 0xf0f4360fc5dbb8cd7107edf24fc3f3c9ef3914b32585062bfd7aa84e02f8b84e
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(` ___-----------_____________>`);
+  console.log(`multilocation: ${getMultiLocationMoonbeam("5HWdttFeYE89GQDGNRYspsJouxZ56xwm6bzKxSPtbDjwpQbb","2032")}`);
+  //   multilocation: 0x00000007f0,0x01f0f4360fc5dbb8cd7107edf24fc3f3c9ef3914b32585062bfd7aa84e02f8b84e00
+  console.log(`multilocation: `,getMultiLocationMoonbeam("5HWdttFeYE89GQDGNRYspsJouxZ56xwm6bzKxSPtbDjwpQbb","2032"));
+//  multilocation:  (2) ['0x00000007f0', '0x01f0f4360fc5dbb8cd7107edf24fc3f3c9ef3914b32585062bfd7aa84e02f8b84e00']
+
+//#endregion
 
 
 // FOR TESTING
