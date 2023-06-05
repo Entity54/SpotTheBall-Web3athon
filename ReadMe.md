@@ -26,8 +26,8 @@ To showcase the project, the following chains and protocols were included in the
 4. [Detailed Walkthrough](#detailed-walkthrough)
 5. [Repos](#repos)
 6. [Installation](#installation)
-7. [Business Logic](#business-logic)
-8. [Phat Contract Logic](#phat-contract)
+7. [Phat Contract](#phat-contract)
+8. [Appendix](#appendix)
 
 <br>
 
@@ -317,7 +317,7 @@ Finally the get_hall_of_fame query allows us to retreive the vector with all hal
 <br>
 <br>
 
-## APPEDNIX
+## APPENDIX
 
 ## Addresses of deployed contracts
 
