@@ -5,7 +5,7 @@
 ## Use Moonbeam and a GMP Protocol to call a contract on a remote chain
 
 <br>
-
+<i>
 To showcase the project, the following chains and protocols were included in the project:
 
 <img src="src/images/glmr100.png" width="50">
@@ -14,6 +14,7 @@ To showcase the project, the following chains and protocols were included in the
 <img src="src/images/intr100.png" width="50">
 <img src="src/images/bsc100.png" width="50">
 <img src="src/images/axl100.png" width="50">
+</i>
 
 <br>
 
