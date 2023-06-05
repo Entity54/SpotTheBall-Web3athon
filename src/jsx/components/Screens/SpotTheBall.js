@@ -383,7 +383,7 @@ const SpotTheBall = ({ api,  blockHeader }) => {
 			<div className="col-xl-12 col-lg-12">
 				<div className="card bg-gradient-2" style={{backgroundColor:""}}>
 					<div className="card-header">
-						<div className="col-xl-6 col-lg-6"style={{alignItems:"center", display:"flex", justifyContent:"center", marginLeft:"40px"}}>
+						<div className="col-xl-6 col-lg-6"style={{alignItems:"center", justifyContent:"center", marginLeft:"15px"}}>
 							<img alt="images" width={1100} src={stbtitle} ></img>
 						</div>
 
