@@ -119,7 +119,9 @@ const mantissa9 = new BN("1000000000");
 let engineMessage = "Welcome to the game Spot The Ball";
 
 // ***** Phala *****
-const phat_games_STB_contractId = "0xe1302a8db9ead738c2de1f483a6c01d4b4e3595ca271aa291cc7ecdbbd2b42ab"
+// const phat_games_STB_contractId = "0xe1302a8db9ead738c2de1f483a6c01d4b4e3595ca271aa291cc7ecdbbd2b42ab"
+const phat_games_STB_contractId = "0x59677eb3014b4c90a332a94b87fa4862494e597eed21995288869de89f300ffc"
+
 
 
 
@@ -1781,6 +1783,9 @@ const start_new_game = async (image_hash="someimagehash", start_time=0, end_time
 let ready_to_check_game = true;
 //#region check_game THIS IS THE SERVER ENGINE
 const check_game = async () => {
+
+	console.log(`check_game`);
+
 	if (phala_api && phat_games_STB) 
 	{
 		const contract = phat_games_STB;
@@ -1804,7 +1809,8 @@ const check_game = async () => {
 			if (result.status.isInBlock) {
 				// console.log(' =====>>> in a block');
 			} else if (result.status.isFinalized) {
-				// console.log(' =====>>> finalized');
+				console.log(' =====>>> check_game Phala tx finalized');
+
 				// console.log('result: ',JSON.stringify(result,null,"\t"));
 
 				// EVM REGISTER / UNREGISTER GAME

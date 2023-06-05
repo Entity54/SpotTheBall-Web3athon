@@ -221,12 +221,12 @@ function App (props) {
             setBlockHeader({number: `${lastHeader.number}`, hash: `lastHeader.hash`, size: "header.size"});
 
             //HERE ADD  CHECKS *******
-            if (((lastHeader.number)%2) ===0) 
-            {
+            // if (((lastHeader.number)%2) ===0) 
+            // {
               // console.log(` ********** updating ********** ||| Spot The Ball PROJECT START ||| at Block Number: ${lastHeader.number}`);
               await check_game();
               // console.log(` ********** updating ********** ||| Spot The Ball  PROJECT END ||| at Block Number: ${lastHeader.number}`);
-            }
+            // }
         });
     }
 

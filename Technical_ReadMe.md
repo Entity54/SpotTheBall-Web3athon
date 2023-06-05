@@ -73,7 +73,7 @@ NEW PLAY
 <br>
 <br>
 
-## Infrastructure
+## Infrastructure What to do when deploying the contracts fresh
 
 1. setAcceptedCurrency => GamePlayers.sol
 2. setAcceptedCurrency => GameDeposits.sol
@@ -89,7 +89,7 @@ NEW PLAY
 
 ## Organise Game
 
-# IMPORTANT CHANGES. NEW AXELARMANAGER HAS THE sendMessageToSatelites soplit to 2 fundtion
+> Note: IMPORTANT CHANGES. NEW AXELARMANAGER HAS THE sendMessageToSatelites soplit to 2 fundtion
 
 sendMessageToLocalSatelite
 sendMessageToSatelites
@@ -145,20 +145,16 @@ REPEAT PROCESS FOR ALL CHAINS AS PLAYERS FROM MOONBEAM AND PARACHAIN KEEP PLAYIN
 
    2,abc,false,binance,0xa95b7843825449DC588EC06018B48019D1111000 PASS 8 DEV for fees
 
-> Once the Axelar callback arrives then Moonbema Axelar Manager will know that itself and satelite contract e.g. Binance Axelar Manager have updated and all have the same winner
+> Once the Axelar callback arrives then Moonbeam Axelar Manager will know that itself and satelite contract e.g. Binance Axelar Manager have updated and all have the same winner
 
 > NOW THAT ALL SATELITES HAVE THE SAME WINNER VALUES WE CAN START THE PAYMENT PROCEDURE
 
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-> NOTE: Matching Moonbeam local varibale with Statelit Global variable
+> NOTE: Matching Moonbeam local variable with Statelit Global variable
 
 globalGameState[gameHash][binance] = gameState;
+
 globalGameWinner[gameHash][binance] = gameWinner(gameHash] = Player({ playerAddressString: winner, playerChain: winnerChain });
 
 <br>

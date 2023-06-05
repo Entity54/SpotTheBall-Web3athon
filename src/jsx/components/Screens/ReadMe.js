@@ -157,7 +157,7 @@ Binance Smart Chain is within the top 3 biggest blockchains with advanced protoc
 </p>
 <p className="mx-4 mt-2 text-dark" style={{ fontSize:"24px"}}>
 <img src={axl100} width="50"></img><br></br>
-Axelar delivers cross-chain communication for Web3 allowing Interchain dApps to be developed.
+Axelar delivers cross-chain communication for Web3 allowing Interchain dApps to be developed. It is possible to call a function in another ecosystem, wait for a callback and even transfer tokens with such instructions
 <br></br>
 </p>
 
@@ -438,7 +438,25 @@ STAKES 0.01<br></br>
 <h3 className="">Mainnet StellaSwap</h3>
 </p>
 <p className="mx-4 mt-2 text-dark" style={{ fontSize:"24px"}}>
-StellaSwap = 0x24aA375Ba88cC6751c2998fA24B007C48d0bA6a4<br></br>
+StellaSwap = 0x24aA375Ba88cC6751c2998fA24B007C48d0bA6a4<br/>
+
+myXCM = 0xc440b4621b985d441DaA33b2d11C951Bc344C98e<br/>
+
+Moonbeam <br/>
+
+AxelarGameManager.sol = 0xEa88A112F8D6028BE88E5766581081E9F05A8b7f <br/>
+
+GamePlayers.sol = 0xdcb5b9b361CA6c24C383158c825D9bf4C75b1b60 <br/>
+
+GameDeposits.sol = 0xEdf6321Df783dB1cC2f145791E06cC7546F715e7<br/>
+
+Binance<br/>
+
+AxelarGameManager.sol = 0x70bEdA6E7dA0B08A0529b50F4A5d3a3c0D98EBa5<br/>
+
+GamePlayers.sol = 0x6B4f4DBB62A98A8635Cb070E128D9f01C0aECebd<br/>
+
+GameDeposits.sol = 0xB17F49d8f51AF38a16fF3D7e7e8199da995336e2<br/>
 
 
 			  </p>
