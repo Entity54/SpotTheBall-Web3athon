@@ -8,12 +8,12 @@
 
 To showcase the project, the following chains and protocols were included in the project:
 
-<img src="images/glmr100.png" width="50">
-<img src="images/pha100.png" width="50">
-<img src="images/astr100.png" width="50">
-<img src="images/intr100.png" width="50">
-<img src="images/bsc100.png" width="50">
-<img src="images/axl100.png" width="50">
+<img src="src/images/glmr100.png" width="50">
+<img src="src/images/pha100.png" width="50">
+<img src="src/images/astr100.png" width="50">
+<img src="src/images/intr100.png" width="50">
+<img src="src/images/bsc100.png" width="50">
+<img src="src/images/axl100.png" width="50">
 
 <br>
 
@@ -31,8 +31,6 @@ To showcase the project, the following chains and protocols were included in the
 <br>
 
 ## General Info
-
----
 
 <p>
 The Polkadot ecosystem is comprised of a relay chain, which provides the shared security of the network, and parachains that use Substrate unique strengths to offer custom based logic chains such as Privacy, Defi, NFTs, etc.
@@ -72,30 +70,43 @@ The game is comprised of Phat Ink! and Solidity EVM Smart Contracts deployed in 
 
 ## Chains Used
 
-### *Phala* <img src="images/pha100.png" width="50">
-Phala is a parachain that among other things offers privacy and advanced off-chain decentralised computational abilities. Therefore we have created a Phat contract that provides:
+<br>
+<img src="src/images/pha100.png" width="50">
+
+***Phala*** is a parachain that among other things offers privacy and advanced off-chain decentralised computational abilities. Therefore we have created a Phat contract that provides:
 - Privacy for each ticket played 
 - Calculation of the wisdom of the crowd solution
 - Calculations on the distances of all ticket co-ordinates played to the WOTC solution to find the winning entry
 - Sorted entries to allow the competition to offer multiple prizes in the future for close entries etc 
 
-### *Moonbeam* <img src="images/glmr100.png" width="50">
-Moonbeam is a parachain that offers a fully compatible EVM environment with a long list of precompiles that offer added functionality. For our case we are using the Xtokens Precompile for transferring the prize funds if the winning entry resides on the Astar or Interlay Parachains.
+<br>
+<img src="src/images/glmr100.png" width="50">
 
-### *Astar* <img src="images/astr100.png" width="50">
-Astar is the biggest blockcahin in Japan and offers an EVM enivironement and an Ink! smart contract environment. It also incorporates multiple blockchain bridges.
+***Moonbeam*** is a parachain that offers a fully compatible EVM environment with a long list of precompiles that offer added functionality. For our case we are using the Xtokens Precompile for transferring the prize funds if the winning entry resides on the Astar or Interlay Parachains.
 
-### *Interlay* <img src="images/intr100.png" width="50">
-Interlay is the defacto decentralised point of entry in Polkadot for the biggest crypto asset, BTC.
+<br>
+<img src="src/images/astr100.png" width="50">
 
-### *Binance Smart Chain (BSC)* <img src="images/bsc100.png" width="50">
-Binance Smart Chain is within the top 3 biggest blockchains with advanced protocols and a large audience.
+***Astar*** is the biggest blockcahin in Japan and offers an EVM enivironement and an Ink! smart contract environment. It also incorporates multiple blockchain bridges.
+
+<br>
+<img src="src/images/intr100.png" width="50">
+
+***Interlay*** is the defacto decentralised point of entry in Polkadot for the biggest crypto asset, BTC.
+
+<br>
+<img src="src/images/bsc100.png" width="50">
+
+***Binance Smart Chain*** is within the top 3 biggest blockchains with advanced protocols and a large audience.
+
+<br>
+<img src="src/images/axl100.png" width="50">
+
+***Axelar*** delivers cross-chain communication for Web3 allowing Interchain dApps to be developed.
 
 <br>
 
 ## Visual Game Walkthrough
-
----
 
 In the Tickets page we can see the Start button which is either green (meaning a new game can be started) or greyed out (if there is already an active game). 
 
@@ -160,6 +171,7 @@ Therefore the winning ticket is the one with the smallest distance to the Wisdom
 <br>
 
 ## Detailed Walkthrough
+
 Three solidity smart contracts are deployed on Moonbeam which are the acting headquarters of the game financials and three almost identical solidity smart contract are deployed in Binance Smart Chain as well.
 
 These smart contracts are called AxelarGameManager.sol, GameDeposits.sol and GamePlayers.sol
@@ -212,8 +224,6 @@ At this point the game ends and the winner enjoys his winnings in their origin w
 
 ## Repos
 
----
-
 Phat contracts repo
 
 https://github.com/Entity54/Phat-Games-STB
@@ -227,8 +237,6 @@ https://github.com/Entity54/SpotTheBall-Web3athon
 <br>
 
 ### Installation
-
----
 
 The Phat contracs were written in the ink! Version 4. In the Phat contract repo the user can either build these from scratch using:
 
@@ -309,8 +317,6 @@ Finally the get_hall_of_fame query allows us to retreive the vector with all hal
 <br>
 
 ## APPEDNIX
-
----
 
 ## Addresses of deployed contracts
 
