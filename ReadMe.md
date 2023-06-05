@@ -6,7 +6,7 @@
 
 <br>
 <i>
-To showcase the project, the following chains and protocols were included in the project:
+To showcase the project, the following chains and protocols were included in the project:<br>
 
 <img src="src/images/glmr100.png" width="50">
 <img src="src/images/pha100.png" width="50">
