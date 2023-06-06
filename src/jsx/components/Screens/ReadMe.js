@@ -83,6 +83,17 @@ const ReadMe = () => {
 
 													</li>
 
+													<p className="mx-4 mt-2 text-dark" style={{ fontSize:"24px"}}>
+													Demo Video<br></br>
+													https://www.youtube.com/watch?v=-ncrWnV5M5E<br></br>
+
+													Demo Website<br></br>
+
+													https://spot-the-ball-web3athon.vercel.app/
+
+													<br></br>
+													</p>
+
 
 													<p className="mx-4 mt-4 text-dark" style={{ fontSize:"24px"}}>
 																
@@ -444,6 +455,16 @@ const ReadMe = () => {
 													</p>
 													<p className="mx-4 mt-2 text-dark" style={{ fontSize:"24px"}}>
 													StellaSwap = 0x24aA375Ba88cC6751c2998fA24B007C48d0bA6a4<br></br>
+													myXCM = 0xc440b4621b985d441DaA33b2d11C951Bc344C98e<br></br><br></br>
+													Moonbeam<br></br>
+													AxelarGameManager.sol. 0xEa88A112F8D6028BE88E5766581081E9F05A8b7f<br></br>
+													GamePlayers.sol. 0xdcb5b9b361CA6c24C383158c825D9bf4C75b1b60<br></br>
+													GameDeposits.sol. 0xEdf6321Df783dB1cC2f145791E06cC7546F715e7<br></br><br></br>
+													Binance<br></br>
+													AxelarGameManager.sol 0x70bEdA6E7dA0B08A0529b50F4A5d3a3c0D98EBa5<br></br>
+													GamePlayers.sol 0x6B4f4DBB62A98A8635Cb070E128D9f01C0aECebd<br></br>
+													GameDeposits.sol 0xB17F49d8f51AF38a16fF3D7e7e8199da995336e2<br></br>
+
 													</p>
 												</Link>
 											</li>

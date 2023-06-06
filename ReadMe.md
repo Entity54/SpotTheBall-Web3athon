@@ -31,6 +31,19 @@ To showcase the project, the following chains and protocols were included in the
 
 <br>
 
+Demo Video
+
+https://www.youtube.com/watch?v=-ncrWnV5M5E
+
+<br>
+
+Demo Website
+
+https://spot-the-ball-web3athon.vercel.app/
+
+<br>
+
+
 ## General Info
 
 <p>
