@@ -121,7 +121,7 @@ Finally the remaining amount of minutes in the game is also shown.
 
 <br>
 
-![plot](./PrintScreens/FEGameInProgress.png)
+<img src="src/images/Newgamestarted.png">
 
 <br>
 
@@ -137,7 +137,7 @@ When they are ready they can click "submit" to submit their tickets. The total c
 
 <br>
 
-![plot](./PrintScreens/FE_PlayTickets.png)
+<img src="src/images/Playtickets.png">
 
 <br>
 
@@ -150,11 +150,6 @@ Therefore instead of transfering funds between the ecosystems to a smart contrac
 
 Originall we considered fees of 20% of the Pot but for the hackathon submission we imposed no commisions.
 
-<br>
-
-![plot](./PrintScreens/FE_PotSize.png)
-
-<br>
 
 Back on the Tickets Page, when the game expires the number of tickets played in the current game is shown underneath the Start button.
 
@@ -162,7 +157,7 @@ The winner of the game along with previous winners are shown. The bottom of the 
 
 <br>
 
-![plot](./PrintScreens/FE_GameEnded_Tickets_HallofFame.png)
+<img src="src/images/Halloffame.png">
 
 <br>
 
@@ -174,7 +169,19 @@ Therefore the winning ticket is the one with the smallest distance to the Wisdom
 
 <br>
 
-![plot](./PrintScreens/FE_WisdomWinner.png)
+<img src="src/images/Winnerannounced.png">
+
+<br>
+
+Other Screenshots
+
+<br>
+
+<img src="src/images/Transferfundsfromsatelites.png">
+
+<br>
+
+<img src="src/images/Transferingfundstowinner.png">
 
 <br>
 
@@ -268,12 +275,6 @@ and can see in http://localhost:3000/ the front end application connected to thi
 <br>
 
 ## Phat Contract
-
-<br>
-
-![plot](./PrintScreens/Phat-Contract-CB-UI-1.png)
-
-<br>
 
 By clicking the Start button in the front end in essence we call config_game function passing the imagehash (to be loaded from 4everland in next relase), the start and end time of the game, the ticket cost and fees percentage. The default ticket cost is 1 axlUSD and the default fees percentage is 20 for 20%
 The finance aspects of the Phat contract will be removed as all finances will be hanlded in Moonbeam and the Satelite Axelar Network deployed smart contracts as shown in this submission
